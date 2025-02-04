@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<th:block th:fragment="result">
+	<div id="result" th:class="${'link ' + (error ? 'error' : '')}">
+		<th:block th:if="${error}">
+			<span th:text="${message}"></span>
+		</th:block>
+		<th:block th:unless="${error}">
+	      <span th:text="${link}"></span>
+	      <button type="button" onclick="copyText(this)">Copy</button>
+      </th:block>
+    </div>
+</th:block>

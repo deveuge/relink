@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Relink - URL Shortener</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/img/favicon.png}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lib/toastify-5.3.0.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+</head>
+
+<body>
+	<main id="main-container">
+		<h1 data-text="Relink">Relink</h1>
+		<h3>Shorten a long link and create a short URL easy to share on sites, chat and emails.</h3>
+		<form onsubmit="return generateLink(event)">
+	        <input type="url" id="url" placeholder="Enter a link to shorten it" autoFocus="true" required/>
+	        <button type="submit">Shorten</button>
+        </form>
+        
+        <th:block th:if="${error}" th:insert="~{fragments/result.html :: result}" />
+        <div th:unless="${error}" id="result"></div>
+        
+	    <a id="credits" href="https://deveuge.github.io/" target="_blank">
+	      © deveuge
+	    </a>
+      </form>
+	</main>
+	
+	<script type="text/javascript" th:src="@{/js/lib/jquery-3.7.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/lib/toastify-5.14.1.js}"></script>
+	<script type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+
+</html>

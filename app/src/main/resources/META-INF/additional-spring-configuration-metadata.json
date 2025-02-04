@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "relink.base.url",
+    "type": "java.lang.String",
+    "description": "Relink Application base URL"
+  },
+  {
+    "name": "relink.api.url",
+    "type": "java.lang.String",
+    "description": "URL to Relink API"
+  },
+  {
+    "name": "relink.api.key",
+    "type": "java.lang.String",
+    "description": "API Key for Relink API"
+  }
+]}

@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "key.generator.service.url",
+    "type": "java.lang.String",
+    "description": "URL for Key Generator Service"
+  },
+  {
+    "name": "key.generator.service.key",
+    "type": "java.lang.String",
+    "description": "API Key for Key Generator Service"
+  },
+  {
+    "name": "scheduling.expired.links.active",
+    "type": "java.lang.String",
+    "description": "Indicates if the expired keys deletion task is to be executed"
+  },
+  {
+    "name": "scheduling.expired.links.cron",
+    "type": "java.lang.String",
+    "description": "Cron expression to schedule the expired keys deletion task"
+  }
+]}

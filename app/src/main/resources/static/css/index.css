@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@900&family=Tomorrow:wght@400;600&display=swap");
+
+:root {
+	font-family: "Tomorrow", sans-serif;
+
+	color: rgba(255, 255, 255, 0.87);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--h1-color1: #92d794;
+	--h1-color2: #2d572f;
+	--h1-border-color1: #20512a;
+	--h1-border-color2: #1d8520;
+
+	--light-green: #5f5;
+	--dark-green: #393;
+	--shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1), 0 2px 0 black;
+	--shadow-glow: 0 0 20px rgba(0, 255, 0, 0.6), inset 0 0 10px rgba(0, 255, 0, 0.4), 0 2px 0 black;
+}
+
+html {
+	background-color: #151515;
+	background: linear-gradient(45deg, #151515, #2e412e, #151515, #719964);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+body {
+	display: flex;
+	position: relative;
+	align-items: center;
+	box-sizing: border-box;
+	min-height: 100vh;
+	min-width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	margin: 0;
+	padding: 0 0 10vh 0;
+}
+
+body:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(0deg, rgba(255, 255, 255, 0.25) 1px, rgba(0, 0, 0, 0) 1px);
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: 25px 25px;
+	pointer-events: none;
+	z-index: -1;
+	opacity: 0.4;
+}
+
+#main-container {
+	margin: auto;
+	text-align: center;
+}
+
+h1 {
+	font-family: "Exo 2", sans-serif;
+	color: #fde9ff;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: clamp(5rem, 10vw, 7rem);
+	line-height: 0.75em;
+	text-align: center;
+	text-shadow: 5px 3px 1px var(--h1-color1), 3px 3px 1px var(--h1-color2), 6px 4px 1px var(--h1-color1), 5px 5px 1px var(--h1-color2), 7px 5px 1px var(--h1-color1), 6px 6px 1px var(--h1-color2), 8px 6px 1px var(--h1-color1), 7px 7px 1px var(--h1-color2),
+		9px 7px 1px var(--h1-color1), 8px 8px 1px var(--h1-color2), 10px 8px 1px var(--h1-color1), 9px 9px 1px var(--h1-color2), 11px 9px 1px var(--h1-color1);
+	position: relative;
+	transform: skew(0, -7deg);
+
+	filter: drop-shadow(3px 5px 6px black);
+}
+
+h1:before {
+	content: attr(data-text);
+	position: absolute;
+	text-shadow: 3px 3px 0px var(--h1-border-color1), -2px -2px 0px var(--h1-border-color2), -3px 3px 0px var(--h1-border-color1), 2px -2px 0px var(--h1-border-color2);
+	filter: drop-shadow(2px 1px 0px var(--h1-border-color2));
+	z-index: 1;
+}
+
+h3 {
+	max-width: 500px;
+	font-weight: normal;
+	font-size: clamp(1rem, 5vw, 1.25rem);
+	margin: -1.25rem auto 2rem auto;
+	opacity: 0.75;
+}
+
+form {
+	display: flex;
+	background: linear-gradient(#1b1b1b, #111);
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 1px #272727;
+	padding: 1rem;
+}
+
+input,
+button {
+	font-family: "Tomorrow", sans-serif;
+	background: linear-gradient(#333, #222);
+	padding: 0.8rem;
+	text-shadow: 0 -1px 0 black;
+	box-shadow: 0 2px 0 black;
+	border: 1px solid #444;
+	color: #888;
+	outline: none;
+	transition: all 0.25s ease;
+}
+
+input {
+	width: 100%;
+	border-radius: 5px 0 0 5px;
+}
+
+input:focus {
+	animation: glow 800ms ease-out infinite alternate;
+	background: linear-gradient(#393939, #292929);
+	border-color: var(--dark-green);
+	box-shadow: var(--shadow);
+	color: #efe;
+}
+
+button {
+	border-radius: 5px;
+	color: white;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+form>button {
+	border-left-color: black;
+	border-radius: 0 5px 5px 0;
+}
+
+button:hover {
+	color: var(--light-green);
+}
+
+.link {
+	background: linear-gradient(#294f11, #0e2d0a);
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 1px var(--dark-green);
+	padding: 1rem;
+	margin-top: 1rem;
+}
+
+.link.error {
+	background: linear-gradient(#6b1c1c, #431414);
+	box-shadow: inset 0 0 0 1px #993333;
+}
+
+.link>button {
+	font-size: 0.75rem;
+	float: right;
+	margin: -0.5rem;
+	padding: 0.5rem;
+	border: 1px solid black;
+}
+
+.link>button:hover {
+	border-color: var(--light-green);
+}
+
+#credits {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-size: 0.8rem;
+}
+
+#credits:hover {
+	font-weight: bold;
+}
+
+.toastify {
+	overflow: hidden;
+	min-width: 200px;
+	padding: 0.5rem 1rem;
+	background: var(--dark-green);
+	border: 1px solid var(--light-green);
+	box-shadow: inset 0 0 0 1px #272727, 0 3px 3px 0 black;
+	border-radius: 5px;
+	text-align: center;
+	white-space: pre-line;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes glow {
+	0% {
+		border-color: var(--dark-green);
+		box-shadow: var(--shadow);
+	}
+
+	100% {
+		border-color: var(--light-green);
+		box-shadow: var(--shadow-glow);
+	}
+}

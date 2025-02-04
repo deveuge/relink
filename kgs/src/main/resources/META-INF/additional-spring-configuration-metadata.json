@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "kgs.generator.alphabet",
+    "type": "java.lang.String",
+    "description": "Set of characters to be used for key generation"
+  },
+  {
+    "name": "kgs.generator.length",
+    "type": "java.lang.String",
+    "description": "Length of keys to be generated"
+  },
+  {
+    "name": "kgs.generator.quantity",
+    "type": "java.lang.String",
+    "description": "Number of keys to be generated in each iteration"
+  },
+  {
+    "name": "kgs.scheduling.active",
+    "type": "java.lang.String",
+    "description": "Indicates if the key generation task is to be executed"
+  },
+  {
+    "name": "kgs.scheduling.delay.initial",
+    "type": "java.lang.String",
+    "description": "Seconds to delay before the first execution of the key generation task"
+  },
+  {
+    "name": "kgs.scheduling.delay.fixed",
+    "type": "java.lang.String",
+    "description": "Seconds between the end of the last invocation and the start of the next key generation task"
+  }
+]}
