@@ -1,5 +1,7 @@
 # Relink - URL Shortener
 
+![Relink preview](preview.png)
+
 Relink is a Java Spring based shortening service consisting in:
 * **Key Generation Service** (KGS): Allows the creation (and deletion) of hashes to be used in short urls. New and used hashes are stored in different tables.
 * **API**: Entry point for using the service. Allows the creation, consultation and deletion of urls. Uses a Redis chache to avoid querying the database for those urls that are consulted the most. It also contains a scheduled task for the deletion of expired urls. Consumes the KGS module.
