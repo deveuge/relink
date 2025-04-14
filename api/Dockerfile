@@ -10,8 +10,8 @@ RUN mvn package -DskipTests
 FROM openjdk:21
 
 # Copy the jar to the production image from the builder stage.
-COPY --from=builder /target/api-*.war relink-api.war
+COPY --from=build /target/api-*.war relink-api.war
 
 # Run the web service on container startup.
 EXPOSE 8082
-CMD ["java", "-jar", "relink-api.jar"]
+CMD ["java", "-jar", "relink-api.war"]
