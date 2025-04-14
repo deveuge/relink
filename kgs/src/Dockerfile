@@ -14,4 +14,4 @@ COPY --from=build /target/kgs-*.war relink-kgs.war
 
 # Run the web service on container startup.
 EXPOSE 8081
-CMD ["java", "-jar", "relink-kgs.jar"]
+CMD ["java", "-jar", "relink-kgs.war"]
