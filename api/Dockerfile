@@ -13,5 +13,5 @@ FROM openjdk:21
 COPY --from=build /target/api-*.war relink-api.war
 
 # Run the web service on container startup.
-EXPOSE 8082
+EXPOSE 8080
 CMD ["java", "-jar", "relink-api.war"]
