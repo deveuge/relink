@@ -10,7 +10,7 @@ RUN mvn package -DskipTests
 FROM openjdk:21
 
 # Copy the jar to the production image from the builder stage.
-COPY --from=builder /target/kgs-*.war relink-kgs.war
+COPY --from=build /target/kgs-*.war relink-kgs.war
 
 # Run the web service on container startup.
 EXPOSE 8081
